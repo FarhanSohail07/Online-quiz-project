@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>CIT Interactive Quiz Platform</title>
 
 <link rel="stylesheet" href="style2.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -16,20 +20,28 @@
 <div class="container">
 
 <div id="start-screen">
-<h1>CIT Interactive Quiz Platform</h1>
 
-<p>Test your knowledge and challenge yourself.</p>
+<h1>🎯 CIT Interactive Quiz Platform</h1>
+
+<p>
+Test your knowledge and challenge yourself.
+</p>
 
 <label>Select Category</label>
 
 <select id="category-select">
+
 <option value="Tech">Tech</option>
 <option value="Non-Tech">Non-Tech</option>
 <option value="Guest">Guest</option>
 <option value="Funny">Funny</option>
+
 </select>
 
-<button id="start-button">Start Quiz</button>
+<button id="start-button">
+Start Quiz
+</button>
+
 </div>
 
 
@@ -38,7 +50,10 @@
 <div class="header">
 
 <div class="number-of-questions">
-Question <span id="question-number">1</span>/5
+Question
+<span id="question-number">
+1
+</span>/5
 </div>
 
 </div>
@@ -47,25 +62,34 @@ Question <span id="question-number">1</span>/5
 
 <div id="options-container"></div>
 
-<button id="next-button">Next Question</button>
+<button id="next-button">
+
+Next Question
+
+</button>
 
 </div>
 
 
-<div id="results-screen" class="hidden">
+<div id="results-screen"
+class="hidden">
 
-<h2>Quiz Completed</h2>
+<h2>Quiz Completed 🎉</h2>
 
-<p>Your Score:
-<span id="final-score"></span>/5
+<p>
+
+Your Score:
+<span id="final-score">
+0
+</span>/5
+
 </p>
 
 <input
 type="text"
 id="enter_player_name"
 placeholder="Enter your name"
-maxlength="15"
->
+maxlength="15">
 
 <div class="button-container">
 
@@ -82,24 +106,47 @@ Go Back
 </div>
 
 
-<div id="leaderboard-modal" class="hidden">
+<div id="leaderboard-modal"
+class="hidden">
 
-<h2>Leaderboard</h2>
+<h2>🏆 Leaderboard</h2>
 
 <ol id="leaderboard-list"></ol>
 
-<button id="close-leaderboard-btn">
+<button
+id="close-leaderboard-btn">
+
 Close
+
 </button>
 
 </div>
 
 </div>
 
-<audio id="correct-sound" src="correct.mp3"></audio>
-<audio id="wrong-sound" src="wrong.mp3"></audio>
-<audio id="background-music"
+
+<audio
+id="correct-sound"
+src="correct.mp3"
+preload="auto">
+</audio>
+
+<audio
+id="wrong-sound"
+src="wrong.mp3"
+preload="auto">
+</audio>
+
+<audio
+id="click-sound"
+src="click.mp3"
+preload="auto">
+</audio>
+
+<audio
+id="background-music"
 src="quiz-background-loop-thinking-news-275636.mp3"
+preload="auto"
 loop>
 </audio>
 
