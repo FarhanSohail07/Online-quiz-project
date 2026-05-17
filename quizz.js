@@ -41,6 +41,7 @@ let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 const correctSound = document.getElementById("correct-sound");
 const wrongSound = document.getElementById("wrong-sound");
 const backgroundMusic = document.getElementById("background-music");
+const clickSound=document.getElementById("click-sound");
 
 // ✅ Elements
 const startScreen = document.getElementById("start-screen");
@@ -63,20 +64,28 @@ const questionNumber = document.getElementById("question-number");
 
 // ✅ Start Quiz
 startButton.addEventListener("click", () => {
+  clickSound.play();
   selectedCategory = categorySelect.value;
-  currentQuestions = getRandomQuestions(questions[selectedCategory], 5);
+  currentQuestions = getRandomQuestions(questions[selectedCategory],5);
+
   currentIndex = 0;
   score = 0;
 
-  if (backgroundMusic && backgroundMusic.paused) {
-    backgroundMusic.volume = 0.5;
-    backgroundMusic.play().catch(err => console.log("Audio error:", err));
+  if(backgroundMusic && backgroundMusic.paused){
+
+    backgroundMusic.volume=0.3;
+
+    backgroundMusic.play()
+    .catch(err=>console.log(err));
+
   }
 
   startScreen.classList.add("hidden");
+
   quizScreen.classList.remove("hidden");
 
   loadQuestion();
+
 });
 
 //  Load Question
@@ -118,6 +127,7 @@ function selectAnswer(selected, correct, clickedBtn) {
 
 // ✅ Next Question
 nextButton.addEventListener("click", () => {
+  clickSound.play();
   currentIndex++;
   if (currentIndex < currentQuestions.length) {
     loadQuestion();
